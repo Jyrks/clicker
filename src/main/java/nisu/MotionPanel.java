@@ -1,0 +1,51 @@
+package nisu;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.geom.Ellipse2D;
+
+public class MotionPanel extends JPanel {
+    private Point initialClick;
+    private JFrame parent;
+
+    public MotionPanel(final JFrame parent){
+        this.parent = parent;
+
+        addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                initialClick = e.getPoint();
+                getComponentAt(initialClick);
+            }
+        });
+
+        addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+
+                // get location of Window
+                int thisX = parent.getLocation().x;
+                int thisY = parent.getLocation().y;
+
+                // Determine how much the mouse moved since the initial click
+                int xMoved = e.getX() - initialClick.x;
+                int yMoved = e.getY() - initialClick.y;
+
+                // Move window to this position
+                int X = thisX + xMoved;
+                int Y = thisY + yMoved;
+                parent.setLocation(X, Y);
+            }
+        });
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setPaint(new Color(255, 0, 0));
+        Shape circle = new Ellipse2D.Double(1, 1, 100, 100);
+        g2.draw(circle);
+    }
+}

@@ -1,0 +1,12 @@
+
+[
+squid:S106,"9Replace this use of System.out or System.err by a logger.(ôïëèıÿÿÿÿ8õ„óû.
+>squid:S2189 ""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+Usquid:S3034&">Prevent "int" promotion by adding "& 0xff" to this expression.(¦ş¦‘
+[
+squid:S1062"9Replace this use of System.out or System.err by a logger.(¼çö¶ûÿÿÿÿ8±ïü.
+\squid:UselessImportCheck",Remove this unused import 'java.util.Timer'.(†£ñáÿÿÿÿÿ8É¿ı.
+usquid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "format".(î‚×‹
+Zsquid:S3034(">Prevent "int" promotion by adding "& 0xff" to this expression.(¤ñø€üÿÿÿÿ
+[
+squid:S1063"9Replace this use of System.out or System.err by a logger.(çôö¶şÿÿÿÿ8Ç‡Åı.
