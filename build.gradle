@@ -9,6 +9,7 @@
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
+    id 'idea'
 
     // Apply the application plugin to add support for building an application
     id 'application'
@@ -22,11 +23,26 @@ repositories {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    implementation 'com.google.guava:guava:27.0.1-jre'
+    compile 'com.google.guava:guava:27.0.1-jre'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'nisu.App'
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 // Define the main class for the application

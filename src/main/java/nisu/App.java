@@ -3,12 +3,12 @@
  */
 package nisu;
 
-public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+import javax.sound.sampled.LineUnavailableException;
+import java.awt.*;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+    public static void main(String[] args) throws LineUnavailableException, AWTException, InterruptedException {
+        final JavaSoundRecorder recorder = new JavaSoundRecorder();
+        recorder.start();
     }
 }

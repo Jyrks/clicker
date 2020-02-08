@@ -1,8 +1,6 @@
 package nisu;
 
 
-import org.apache.commons.lang3.time.StopWatch;
-
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
@@ -28,9 +26,6 @@ public class JavaSoundRecorder {
         TargetDataLine targetDataLine = AudioSystem.getTargetDataLine(audioFormat);
         targetDataLine.open();
         targetDataLine.start();
-
-        StopWatch stopwatch = new StopWatch();
-        stopwatch.start();
 
         JFrame jf = new JFrame();
         jf.add(new JLabel("Label"));
@@ -73,8 +68,5 @@ public class JavaSoundRecorder {
         }
     }
 
-    public static void main(String[] args) throws LineUnavailableException, AWTException, InterruptedException {
-        final JavaSoundRecorder recorder = new JavaSoundRecorder();
-        recorder.start();
-    }
+
 }
