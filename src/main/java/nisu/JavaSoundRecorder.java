@@ -8,6 +8,8 @@ import javax.sound.sampled.TargetDataLine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class JavaSoundRecorder {
 
@@ -21,7 +23,7 @@ public class JavaSoundRecorder {
         return format;
     }
 
-    void start() throws LineUnavailableException, AWTException, InterruptedException {
+    void start() throws LineUnavailableException, AWTException {
         AudioFormat audioFormat = getAudioFormat();
         TargetDataLine targetDataLine = AudioSystem.getTargetDataLine(audioFormat);
         targetDataLine.open();
@@ -30,43 +32,48 @@ public class JavaSoundRecorder {
         JFrame jf = new JFrame();
         jf.add(new JLabel("Label"));
         JPanel jp = new MotionPanel(jf);
-//        jp.setBorder(new LineBorder(Color.BLUE));
         jf.setUndecorated(true);
-        jp.setPreferredSize(new Dimension(110,110));// changed it to preferredSize, Thanks!
+        jp.setPreferredSize(new Dimension(110, 110));
         jp.setOpaque(false);
-        jf.getContentPane().add( jp );
+        jf.getContentPane().add(jp);
         jf.pack();
         jf.setVisible(true);
-        jf.setBackground(new Color(0,0,0,0));
+        jf.setBackground(new Color(0, 0, 0, 1));
 
-        boolean isHidden = false;
-        byte [] buffer = new byte[2000];
+        byte[] buffer = new byte[2000];
         while (true) {
-
-            int bytesRead = targetDataLine.read(buffer,0,buffer.length);
+            int bytesRead = targetDataLine.read(buffer, 0, buffer.length);
 
             short max;
 
-            if (bytesRead >=0) {
+
+            if (bytesRead >= 0) {
                 max = (short) (buffer[0] + (buffer[1] << 8));
-                for (int p=2;p<bytesRead-1;p+=2) {
-                    short thisValue = (short) (buffer[p] + (buffer[p+1] << 8));
-                    if (thisValue>max) max=thisValue;
+                for (int p = 2; p < bytesRead - 1; p += 2) {
+                    short thisValue = (short) (buffer[p] + (buffer[p + 1] << 8));
+                    if (thisValue > max) max = thisValue;
                 }
-                if (max > 3000) {
-                    System.out.println("You clapped");
+                System.out.println(max);
+                System.out.println(jf.getLocationOnScreen());
+                if (max > 2000) {
                     Robot bot = new Robot();
-                    bot.mouseMove(jf.getLocationOnScreen().x + 50, jf.getLocationOnScreen().y + 50);
+                    moveMouse(jf.getLocationOnScreen().x + 50, jf.getLocationOnScreen().y + 50, 4, bot);
                     jf.hide();
-                    Thread.sleep(60);
-                    System.out.println("Click");
                     bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                     bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-                    throw new RuntimeException();
+                    jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                    jf.dispatchEvent(new WindowEvent(jf, WindowEvent.WINDOW_CLOSING));
+                    return;
                 }
             }
         }
     }
 
-
+    public static void moveMouse(int x, int y, int maxTimes, Robot screenWin) {
+        for(int count = 0;(MouseInfo.getPointerInfo().getLocation().getX() != x ||
+                MouseInfo.getPointerInfo().getLocation().getY() != y) &&
+                count < maxTimes; count++) {
+            screenWin.mouseMove(x, y);
+        }
+    }
 }

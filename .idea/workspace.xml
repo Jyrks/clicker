@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1952575-921a-40a2-afc6-94148710aafe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nisu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nisu/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nisu/JavaSoundRecorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nisu/JavaSoundRecorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nisu/AppTest.java" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +46,13 @@
   </component>
   <component name="ProjectId" id="1XTJn8BLCqm0ZaxjaI0NHpefukp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -62,18 +64,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration default="true" type="Applet">
@@ -134,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JavaSoundRecorder" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.JavaSoundRecorder" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +143,7 @@
       <workItem from="1581079901285" duration="603000" />
       <workItem from="1581080580562" duration="1526000" />
       <workItem from="1581169587944" duration="10504000" />
+      <workItem from="1581185101106" duration="3687000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1581168455024</created>
@@ -172,7 +163,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -181,5 +174,47 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom" timestamp="1581244446399">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
+    <state width="2005" height="300" key="GridCell.Tab.0.center" timestamp="1581244446399">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.center/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
+    <state width="2005" height="300" key="GridCell.Tab.0.left" timestamp="1581244446399">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.left/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
+    <state width="2005" height="300" key="GridCell.Tab.0.right" timestamp="1581244446399">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.right/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
+    <state width="2005" height="376" key="GridCell.Tab.1.bottom" timestamp="1581244317856">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="376" key="GridCell.Tab.1.bottom/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244317856" />
+    <state width="2005" height="376" key="GridCell.Tab.1.center" timestamp="1581244317856">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="376" key="GridCell.Tab.1.center/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244317856" />
+    <state width="2005" height="376" key="GridCell.Tab.1.left" timestamp="1581244317855">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="376" key="GridCell.Tab.1.left/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244317855" />
+    <state width="2005" height="376" key="GridCell.Tab.1.right" timestamp="1581244317856">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="376" key="GridCell.Tab.1.right/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244317856" />
+    <state x="535" y="202" key="SettingsEditor" timestamp="1581185544858">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="535" y="202" key="SettingsEditor/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581185544858" />
+    <state x="733" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1581185106355">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="733" y="385" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581185106355" />
   </component>
 </project>
