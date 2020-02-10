@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1952575-921a-40a2-afc6-94148710aafe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b1952575-921a-40a2-afc6-94148710aafe" name="Default Changelist" comment="Windows fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nisu/JavaSoundRecorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nisu/JavaSoundRecorder.java" afterDir="false" />
     </list>
@@ -20,12 +18,26 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="nisu" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="nisu" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="nisu" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -106,6 +118,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="clicker [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -124,6 +155,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.clicker [build]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.JavaSoundRecorder" />
       </list>
@@ -143,7 +175,9 @@
       <workItem from="1581079901285" duration="603000" />
       <workItem from="1581080580562" duration="1526000" />
       <workItem from="1581169587944" duration="10504000" />
-      <workItem from="1581185101106" duration="3687000" />
+      <workItem from="1581185101106" duration="8226000" />
+      <workItem from="1581351744624" duration="399000" />
+      <workItem from="1581352180091" duration="2402000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1581168455024</created>
@@ -152,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581168455025</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Windows fix">
+      <created>1581244544971</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581244544971</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,25 +214,34 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Windows fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Windows fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2005" height="300" key="GridCell.Tab.0.bottom" timestamp="1581244446399">
+    <state x="15" y="10" width="2019" height="1090" key="CommitChangelistDialog2" timestamp="1581354680607">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="300" key="GridCell.Tab.0.bottom/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
-    <state width="2005" height="300" key="GridCell.Tab.0.center" timestamp="1581244446399">
+    <state x="15" y="10" width="2019" height="1090" key="CommitChangelistDialog2/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354680607" />
+    <state x="198" y="99" key="DiffContextDialog" timestamp="1581354679302">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="300" key="GridCell.Tab.0.center/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
-    <state width="2005" height="300" key="GridCell.Tab.0.left" timestamp="1581244446399">
+    <state x="198" y="99" key="DiffContextDialog/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354679302" />
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom" timestamp="1581354683894">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="300" key="GridCell.Tab.0.left/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
-    <state width="2005" height="300" key="GridCell.Tab.0.right" timestamp="1581244446399">
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354683894" />
+    <state width="2005" height="300" key="GridCell.Tab.0.center" timestamp="1581354683890">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="300" key="GridCell.Tab.0.right/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244446399" />
+    <state width="2005" height="300" key="GridCell.Tab.0.center/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354683890" />
+    <state width="2005" height="300" key="GridCell.Tab.0.left" timestamp="1581354683889">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.left/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354683889" />
+    <state width="2005" height="300" key="GridCell.Tab.0.right" timestamp="1581354683892">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.right/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581354683892" />
     <state width="2005" height="376" key="GridCell.Tab.1.bottom" timestamp="1581244317856">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -212,9 +262,21 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="535" y="202" key="SettingsEditor/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581185544858" />
+    <state x="617" y="293" key="Vcs.Push.Dialog.v2" timestamp="1581244546764">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="293" key="Vcs.Push.Dialog.v2/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581244546764" />
     <state x="733" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1581185106355">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="733" y="385" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581185106355" />
+    <state x="836" y="476" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581353719181">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="836" y="476" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581353719181" />
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1581353779903">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112/-1920.0.1536.824@0.0.2048.1112" timestamp="1581353779903" />
   </component>
 </project>
