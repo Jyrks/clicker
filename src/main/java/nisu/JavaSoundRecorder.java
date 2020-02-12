@@ -7,6 +7,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 
 import static org.apache.commons.lang3.math.NumberUtils.isCreatable;
@@ -19,8 +20,7 @@ public class JavaSoundRecorder {
         int channels = 1;
         boolean signed = true;
         boolean bigEndian = false;
-        AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
-        return format;
+        return new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
     }
 
     void start() throws LineUnavailableException, AWTException, InterruptedException {
@@ -39,8 +39,17 @@ public class JavaSoundRecorder {
         textField.setBounds(120, 0, 35, 30);
         jf.add(textField);
 
-        JToggleButton enableButton = new JToggleButton("Enable");
-        enableButton.setBounds(120,50,80,30);
+        JToggleButton enableButton = new JToggleButton("Disabled");
+        enableButton.setBounds(104,50,96,30);
+        ActionListener actionListener = actionEvent -> {
+            AbstractButton abstractButton = (AbstractButton) actionEvent.getSource();
+            if (abstractButton.getModel().isSelected()) {
+                abstractButton.setText("Enabled");
+            } else {
+                abstractButton.setText("Disabled");
+            }
+        };
+        enableButton.addActionListener(actionListener);
         jf.add(enableButton);
 
         JPanel jp = new MotionPanel(jf);
@@ -78,7 +87,7 @@ public class JavaSoundRecorder {
         }
     }
 
-    public static Long getDelay(JTextField textField) {
+    private static Long getDelay(JTextField textField) {
         String text = textField.getText().replace(",", ".");
         if (!isCreatable(text)) {
             return 0L;
@@ -86,7 +95,7 @@ public class JavaSoundRecorder {
         return new Double(Double.parseDouble(text) * 1000).longValue();
     }
 
-    public static void moveMouse(int x, int y, int maxTimes, Robot screenWin) {
+    private static void moveMouse(int x, int y, int maxTimes, Robot screenWin) {
         for(int count = 0;(MouseInfo.getPointerInfo().getLocation().getX() != x ||
                 MouseInfo.getPointerInfo().getLocation().getY() != y) &&
                 count < maxTimes; count++) {
