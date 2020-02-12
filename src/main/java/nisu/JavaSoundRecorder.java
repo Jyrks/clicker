@@ -76,8 +76,10 @@ public class JavaSoundRecorder {
                 if (max > 2000 && enableButton.isSelected()) {
                     Thread.sleep(getDelay(textField));
                     Robot bot = new Robot();
-                    moveMouse(jf.getLocationOnScreen().x + 50, jf.getLocationOnScreen().y + 50, 4, bot);
+                    int x = jf.getLocationOnScreen().x + 50;
+                    int y = jf.getLocationOnScreen().y + 50;
                     jf.setVisible(false);
+                    moveMouse(x, y, 4, bot);
                     bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                     bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                     jf.setVisible(true);
