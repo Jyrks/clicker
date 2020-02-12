@@ -82,6 +82,8 @@ public class JavaSoundRecorder {
                     moveMouse(x, y, 4, bot);
                     bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
                     bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                    bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                    bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                     jf.setVisible(true);
                     enableButton.setSelected(false);
                     enableButton.setText("Disabled");
