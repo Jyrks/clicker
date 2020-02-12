@@ -82,6 +82,7 @@ public class JavaSoundRecorder {
                     bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
                     jf.setVisible(true);
                     enableButton.setSelected(false);
+                    enableButton.setText("Disabled");
                 }
             }
         }
