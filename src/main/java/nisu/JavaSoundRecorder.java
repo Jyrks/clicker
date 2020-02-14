@@ -39,8 +39,12 @@ public class JavaSoundRecorder {
         textField.setBounds(120, 0, 35, 30);
         jf.add(textField);
 
+        JTextField soundField = new JTextField(30);
+        soundField.setBounds(120, 35, 70, 30);
+        jf.add(soundField);
+
         JToggleButton enableButton = new JToggleButton("Disabled");
-        enableButton.setBounds(104,50,96,30);
+        enableButton.setBounds(104,70,96,30);
         ActionListener actionListener = actionEvent -> {
             AbstractButton abstractButton = (AbstractButton) actionEvent.getSource();
             if (abstractButton.getModel().isSelected()) {
@@ -68,7 +72,8 @@ public class JavaSoundRecorder {
             short max;
 
             if (bytesRead >= 0) {
-                max = (short) (buffer[0] + (buffer[1] << 8));
+                max = abs((short) (buffer[0] + (buffer[1] << 8)));
+                soundField.setText("" + max);
                 for (int p = 2; p < bytesRead - 1; p += 2) {
                     short thisValue = (short) (buffer[p] + (buffer[p + 1] << 8));
                     if (thisValue > max) max = thisValue;
@@ -106,5 +111,9 @@ public class JavaSoundRecorder {
                 count < maxTimes; count++) {
             screenWin.mouseMove(x, y);
         }
+    }
+
+    private static short abs(short a) {
+        return a < 0 ? (short) -a : a;
     }
 }
