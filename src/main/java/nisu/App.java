@@ -4,11 +4,99 @@
 package nisu;
 
 import javax.sound.sampled.LineUnavailableException;
+import javax.usb.*;
 import java.awt.*;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 public class App {
-    public static void main(String[] args) throws LineUnavailableException, AWTException, InterruptedException {
-        final JavaSoundRecorder recorder = new JavaSoundRecorder();
-        recorder.start();
+    public static void main(String[] args) throws LineUnavailableException, AWTException, InterruptedException, UsbException, UnsupportedEncodingException {
+//        final JavaSoundRecorder recorder = new JavaSoundRecorder();
+//        recorder.start();
+        UsbController usb = new UsbController();
+
+        short vendorId = hexToShort("046d");
+        short productId = hexToShort("c31c");
+
+        System.out.println("vendorId in binary " + shortToBinaryString(productId));
+        System.out.println("productId in binary " + shortToBinaryString(vendorId));
+        UsbDevice device = usb.findDevice(UsbHostManager.getUsbServices().getRootUsbHub(), vendorId, productId) ;
+        testRequest(device);
+        System.out.println("Device conf " + device.getUsbConfiguration((byte) 1));
+
+        System.out.println("Test " + device.getActiveUsbConfiguration().getUsbInterfaces());
+        System.out.println("USB confs: " + device.getActiveUsbConfiguration());
+        UsbConfiguration configuration = device.getUsbConfiguration((byte) 1);
+        System.out.println("Interface: " + configuration.getUsbInterface((byte) 0));
+        UsbInterface iface = configuration.getUsbInterface((byte) 0);
+        iface.claim(usbInterface -> true);
+
+        byte bmRequestType = (byte) 0xb6;
+        byte bRequest = (byte) 0x05;
+        short wValue = twoBytesToShort((byte) 0x03, (byte) 0x00);
+
+        System.out.println("bmRequest: " + byteToBinaryString(bmRequestType));
+        System.out.println("bRequest: " + byteToBinaryString(bRequest));
+        System.out.println("wValue: " + shortToBinaryString(wValue));
+
+        UsbControlIrp irp = device.createUsbControlIrp(
+            bmRequestType,
+//            UsbConst.REQUEST_GET_CONFIGURATION,
+            bRequest,
+            wValue,
+            (short) 0
+        );
+        irp.setData(new byte[1]);
+        device.syncSubmit(irp);
+        System.out.println(irp.getData()[0]);
+    }
+
+    private static short twoBytesToShort(byte firstByte, byte secondByte) {
+        ByteBuffer bb = ByteBuffer.allocate(2);
+        bb.order(ByteOrder.BIG_ENDIAN);
+//        bb.order(ByteOrder.LITTLE_ENDIAN);
+        bb.put(firstByte);
+        bb.put(secondByte);
+        return bb.getShort(0);
+    }
+
+    private static short byteToShort(byte b) {
+        ByteBuffer bb = ByteBuffer.allocate(2);
+        bb.order(ByteOrder.LITTLE_ENDIAN);
+        bb.put(b);
+        return bb.getShort(0);
+    }
+
+    private static short hexToShort(String hex) {
+        int decimal = Integer.parseInt(hex, 16);
+        System.out.println(String.format("%8s", Integer.toBinaryString(decimal & 0xFF)).replace(' ', '0'));
+        return new Integer(decimal).shortValue();
+    }
+
+    private static String shortToBinaryString(short s) {
+        String binaryString = Integer.toBinaryString(s);
+        if (binaryString.length() > 16) {
+            return Integer.toBinaryString(s).substring(16);
+        }
+        return Integer.toBinaryString(s);
+    }
+
+    private static String byteToBinaryString(byte s) {
+        return String.format("%8s", Integer.toBinaryString(s & 0xFF)).replace(' ', '0');
+    }
+
+    private static void testRequest(UsbDevice device) throws UsbException {
+        UsbControlIrp irp = device.createUsbControlIrp(
+            (byte) (UsbConst.REQUESTTYPE_DIRECTION_IN
+                | UsbConst.REQUESTTYPE_TYPE_STANDARD
+                | UsbConst.REQUESTTYPE_RECIPIENT_DEVICE),
+            UsbConst.REQUEST_GET_CONFIGURATION,
+            (short) 0,
+            (short) 0
+        );
+        irp.setData(new byte[1]);
+        device.syncSubmit(irp);
+        System.out.println("Test request response " + irp.getData()[0]);
     }
 }
