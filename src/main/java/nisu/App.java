@@ -48,6 +48,7 @@ public class App {
             (short) 0
         );
         irp.setData(new byte[1]);
+        // Exception in thread "main" javax.usb.UsbPlatformException: USB error 9: Unable to submit control message: Pipe error
         device.syncSubmit(irp);
         System.out.println(irp.getData()[0]);
     }
